@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct EmptyElementView: View {
+    var imageName: String
+    var title: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Image(imageName)
+                .resizable()
+                .frame(width: UIScreen.main.bounds.width - 30,height: 200)
+                .scaledToFill()
+            Text(title)
+                .font(.title)
+                .fontWeight(.bold)
+        }
     }
 }
 
 #Preview {
-    EmptyElementView()
+    EmptyElementView(imageName: "", title: "")
 }
