@@ -28,7 +28,7 @@ struct NavigationStackModifier: ViewModifier {
                         }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Image("michael_scott")
+                    Image("elizabeth")
                         .resizable()
                         .frame(width:45,height: 45)
                         .scaledToFill()
