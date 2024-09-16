@@ -28,7 +28,7 @@ struct InboxView: View {
                             }
                         }, label: {
                             VStack {
-                                Text("Messages")
+                                Text("Mensagens")
                                     .font(.headline)
                                     .fontWeight(.semibold)
                                     .foregroundStyle(tabSelection == .Messages ? .blue : Color(.darkGray))
@@ -45,7 +45,7 @@ struct InboxView: View {
                             }
                         }, label: {
                             VStack {
-                                Text("Notifications")
+                                Text("Notificações")
                                     .font(.headline)
                                     .fontWeight(.semibold)
                                     .foregroundStyle(tabSelection == .Notifications ? .blue : Color(.darkGray))
@@ -58,7 +58,7 @@ struct InboxView: View {
                     }
                     switch tabSelection {
                     case .Messages:
-                        EmptyElementView(imageName: "message", title: "No messages yet")
+                        EmptyElementView(imageName: "message", title: "Nenhuma mensagem")
                     case .Notifications:
                         NotificationsView()
                     }

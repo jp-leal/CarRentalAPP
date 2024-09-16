@@ -32,7 +32,7 @@ struct FavoritesView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Favorites")
+            .navigationTitle("Favoritos")
             .navigationBarTitleDisplayMode(.inline)
             .background(Color(.systemGray6))
         }

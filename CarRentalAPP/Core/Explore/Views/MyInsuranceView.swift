@@ -16,7 +16,7 @@ struct MyInsuranceView: View {
             Image(systemName: "questionmark.circle")
                 .resizable()
                 .frame(width: 35, height: 35)
-            Text("All CarRentalAPP protection plans include a third-party libality in surance policy issued to CarRentalAPP. The policy provides secondary coverage to ensure that any CarRentalAPP driver will be insured to the state minimum limits required for third-party liability, unless primary coverage is explicitly required by an applicable state statute. Liabality coverage is devending on the plan chosen. \n \n Protection plan also come with 24/7 customer support and access to roadside service, subject to additional terms,conditions and costs.")
+            Text("A nossa proteção possibilita uma coparticipação em caso de danos, avarias, roubo, incêndios e perda total. Caso o acidente tenha envolvido um carro terceiro, ele também estará protegido com o valor da coparticipação padrão para terceiros (R$5.000,00) ou o valor do conserto do veículo, prevalecendo o que for mais barato. A cobertura de danos materiais a terceiros é limitada a R$50.000,00.")
                 .font(.subheadline)
             Spacer()
         }

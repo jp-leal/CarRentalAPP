@@ -17,7 +17,7 @@ struct MainTabView: View {
                         VStack {
                             Image(systemName: "magnifyingglass")
                                 .environment(\.symbolVariants,selectedTab == 0 ? .fill : .none)
-                            Text("Search")
+                            Text("Buscar")
                         }
                     }
                     .onAppear{
@@ -28,7 +28,7 @@ struct MainTabView: View {
                         VStack {
                             Image(systemName: "heart")
                                 .environment(\.symbolVariants,selectedTab == 1 ? .fill : .none)
-                            Text("Favorites")
+                            Text("Favoritos")
                         }
                     }
                     .onAppear{
@@ -39,7 +39,7 @@ struct MainTabView: View {
                         VStack {
                             Image(systemName: "road.lanes")
                                 .environment(\.symbolVariants,selectedTab == 2 ? .fill : .none)
-                            Text("Trips")
+                            Text("Minha Viagem")
                         }
                     }
                     .onAppear{
@@ -61,7 +61,7 @@ struct MainTabView: View {
                         VStack {
                             Image(systemName: "ellipsis")
                                 .environment(\.symbolVariants,selectedTab == 4 ? .fill : .none)
-                            Text("More")
+                            Text("Perfil")
                         }
                     }
                     .onAppear{

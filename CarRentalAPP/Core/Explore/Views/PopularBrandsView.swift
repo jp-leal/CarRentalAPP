@@ -16,12 +16,12 @@ struct PopularBrandsView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Popular Brands")
+                Text("Selecione uma marca")
                     .font(.headline)
                     .fontWeight(.semibold)
                 Spacer()
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    Text("See All")
+                    Text("Ver Todos")
                         .font(.footnote)
                         .fontWeight(.semibold)
                 })

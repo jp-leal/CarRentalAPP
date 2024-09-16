@@ -15,16 +15,18 @@ struct TripDateView: View {
     @State private  var selectedDates: Set<DateComponents>
     @State private var isDatePickerPresented: Bool = false
     init() {
-        self.selectedDates = [.init(timeZone: .gmt, year: Int(currentYear), month: Int(currentMonth), day: Int(currentDay), hour: 10),.init(timeZone: .gmt, year: 2023, month: 12, day: returnDay, hour: 10)]
+        self.selectedDates = [.init(timeZone: .gmt, year: Int(currentYear), month: Int(currentMonth), day: Int(currentDay), hour: 10),.init(timeZone: .gmt, year: 2024, month: 12, day: returnDay, hour: 10)]
     }
     func formattedDate(addedDays: Int) -> String {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "EEEE d MMM "
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "pt_BR") // Set locale to Portuguese
+        dateFormatter.dateFormat = "EEEE d MMM"
         return dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: addedDays, to: Date()) ?? Date())
-        }
+    }
+
     var body: some View {
         VStack(alignment: .leading,spacing: 15) {
-            Text("Trip Dates")
+            Text("Datas")
                 .foregroundStyle(Color(.darkGray))
                 .font(.headline)
                 .fontWeight(.semibold)
@@ -40,7 +42,7 @@ struct TripDateView: View {
                 Button {
                     isDatePickerPresented.toggle()
                 } label: {
-                    Text("Change")
+                    Text("Alterar")
                         .font(.headline)
                         .fontWeight(.bold)
                 }
@@ -78,27 +80,27 @@ struct TripDateView: View {
                     .padding(.horizontal)
                     Divider()
                         .padding(.bottom)
-                    MultiDatePicker("Select Dates", selection: $selectedDates,in: Date()...)
+                    MultiDatePicker("Escolha uma data", selection: $selectedDates,in: Date()...)
                     .frame(height: 300)
                     .padding(.horizontal)
                     Divider()
                         .padding(.top)
                     HStack {
-                        Text("Start: 10")
+                        Text("Início: 10")
                             .font(.footnote)
                             .foregroundStyle(.gray)
                         Slider(value: $start, in: 0...24)
                     }
                     .padding(.horizontal)
                     HStack(spacing: 15) {
-                        Text("End: 10")
+                        Text("Término: 10")
                             .font(.footnote)
                             .foregroundStyle(.gray)
                         Slider(value: $start, in: 0...24)
                     }
                     .padding(.horizontal)
                     Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        Text("Save")
+                        Text("Salvar")
                             .foregroundStyle(.white)
                             .frame(width: UIScreen.main.bounds.width - 35, height: 45)
                             .background(.blue)

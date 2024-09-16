@@ -10,7 +10,7 @@ import SwiftUI
 struct NotificationsView: View {
     var body: some View {
         VStack {
-            Text("Activity")
+            Text("Atividade")
                 .font(.headline)
                 .fontWeight(.bold)
             Divider()
@@ -18,15 +18,15 @@ struct NotificationsView: View {
                 Circle()
                     .frame(width: 75, height: 75)
                     .overlay {
-                        Text("CarRentalApp")
+                        Text("Central de Locação de Carros")
                             .font(.caption2)
                             .foregroundStyle(.white)
                     }
                 VStack(alignment: .leading) {
-                    Text("Welcome to CarRentalApp")
+                    Text("Bem vindo à nossa Agência")
                         .font(.headline)
                         .fontWeight(.semibold)
-                    Text("Thanks for joining the CarRentalApp community. your adventure starts here")
+                    Text("Obrigado por usar nosso aplicativo. Sua aventura começa aqui")
                 }
             }
             .padding()

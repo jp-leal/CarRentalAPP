@@ -14,7 +14,7 @@ struct CustomSearchBar: View {
                 Image(systemName: "magnifyingglass")
                     .padding(.leading)
                     .foregroundStyle(.white)
-                Text("Search a car...")
+                Text("Buscar um Carro...")
                     .font(.footnote)
                     .foregroundStyle(.white)
                 Spacer()

@@ -28,7 +28,7 @@ struct TripsView: View {
                                 }
                             }, label: {
                                 VStack {
-                                    Text("Booked")
+                                    Text("Agendamentos")
                                         .font(.headline)
                                         .fontWeight(.semibold)
                                         .foregroundStyle(tabSelection == .booked ? .blue : Color(.darkGray))
@@ -45,7 +45,7 @@ struct TripsView: View {
                                 }
                             }, label: {
                                 VStack {
-                                    Text("History")
+                                    Text("Histórico")
                                         .font(.headline)
                                         .fontWeight(.semibold)
                                         .foregroundStyle(tabSelection == .history ? .blue : Color(.darkGray))
@@ -58,16 +58,16 @@ struct TripsView: View {
                     }
                     switch tabSelection {
                     case .booked:
-                        EmptyElementView(imageName: "car_img", title: "No trips")
+                        EmptyElementView(imageName: "car_img", title: "Nenhuma Viagem")
                     case .history:
-                        EmptyElementView(imageName: "car_img", title: "No previous trips")
+                        EmptyElementView(imageName: "car_img", title: "Nenhuma Viagem Anterior")
                     }
                     
                     Spacer()
                 }
                 .padding()
             }
-            .navigationTitle("Trips")
+            .navigationTitle("Agendamentos")
             .navigationBarTitleDisplayMode(.inline)
         }
         

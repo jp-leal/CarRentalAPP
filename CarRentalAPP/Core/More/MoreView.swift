@@ -8,61 +8,73 @@
 import SwiftUI
 
 struct MoreView: View {
-    var parametersOptions: [(String,Image)] = [("Account",Image(systemName: "person")),("How CarRentalApp works",Image(systemName: "key.horizontal")),("Contact Support",Image(systemName: "person.wave.2")),("Legal",Image(systemName: "newspaper")),("Open source license",Image(systemName: "newspaper"))]
+    var parametersOptions: [(String, String)]
+    
     @State private var showAlert: Bool = false
     @State private var displayEditProfileView: Bool = false
+
+    init() {
+        self.parametersOptions = [
+            ("Conta", "person"),
+            ("Como Funciona", "key.horizontal"),
+            ("Contato Suporte", "person.wave.2"),
+            ("Legal", "newspaper"),
+            ("Licenças", "newspaper")
+        ]
+    }
+
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading,spacing: 30) {
+                VStack(alignment: .leading, spacing: 30) {
                     Button(action: {
                         displayEditProfileView.toggle()
                     }, label: {
                         HeaderView()
                     })
-                    
-                        VStack(spacing: 60) {
-                            
-                                ForEach(parametersOptions, id: \.0) { option in
-                                    HStack {
-                                        option.1
-                                        .resizable()
-                                        .frame(width: 20, height: 20)
-                                        Text(option.0)
-                                    Spacer()
-                                }
-                                }
+
+                    VStack(spacing: 60) {
+                        ForEach(parametersOptions, id: \.0) { option in
+                            HStack {
+                                Image(systemName: option.1)
+                                    .resizable()
+                                    .frame(width: 20, height: 20)
+                                    .padding(.trailing, 10)
+                                Text(option.0)
+                                Spacer()
                             }
-                        .padding(.horizontal)
-                        Divider()
+                        }
+                    }
+                    .padding(.horizontal)
+                    Divider()
                         .padding(.vertical)
-                    VStack(alignment: .leading,spacing: 30) {
+                    VStack(alignment: .leading, spacing: 30) {
                         Button(action: {
                             showAlert.toggle()
                         }, label: {
-                            Text("Logout")
+                            Text("Sair")
                                 .foregroundStyle(.black)
                         })
-                        Text("version 1.0")
+                        Text("versão 1.0")
                             .font(.caption)
                             .foregroundStyle(.gray)
                     }
                     .padding(.horizontal)
-                        }
-                    .padding(.vertical,40)
+                }
+                .padding(.vertical, 40)
             }
-            .alert("Are you sure you want to logut?", isPresented: $showAlert, actions: {
-                Button("Logout") { }
+            .alert("Tem certeza que deseja sair?", isPresented: $showAlert, actions: {
+                Button("Sair") { }
                 Button("Cancel", role: .cancel) {}
             })
-            .ignoresSafeArea()
             .background(Color(.systemGray6))
             .fullScreenCover(isPresented: $displayEditProfileView, content: {
                 EditProfileView()
             })
         }
-        }
     }
+}
+
 
 #Preview {
     MoreView()
@@ -82,7 +94,7 @@ struct HeaderView: View {
                         .font(.headline)
                         .fontWeight(.semibold)
                         .foregroundStyle(.black)
-                    Text("View and edit profile")
+                    Text("Editar Perfil")
                         .foregroundStyle(.blue)
                 }
                 Spacer()

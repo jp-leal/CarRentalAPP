@@ -35,19 +35,19 @@ struct DetailCarView: View {
                 Divider()
                 TripDateView()
                 Divider()
-                LocationView(title: "Pickup & Return", message: "San Francisco")
+                LocationView(title: "Retirada & Entrega", message: "Florianópolis, SC  /  Curitiba, PR")
                 Divider()
-                CancellationView(title: "Cancellation policy", message: "Free cancellation")
+                CancellationView(title: "Política de Cancelamento", message: "Cancelamento Gratuito")
                 Divider()
-                CarInfoView(title: "Distance included", message: viewModel.cars[index].maxDistance == nil ? "Unlimited" : "\(viewModel.cars[index].maxDistance ?? 0) km")
+                CarInfoView(title: "Distância", message: viewModel.cars[index].maxDistance == nil ? "Ilimitada" : "\(viewModel.cars[index].maxDistance ?? 0) km")
                 Divider()
-                InsuranceInfoView(title: "Insurance & Protection", message: viewModel.cars[index].insurance)
+                InsuranceInfoView(title: "Proteção & Seguro", message: viewModel.cars[index].insurance)
                 Divider()
-                CarBasicsView(title: "Car Basics", numberOfSeats: viewModel.cars[index].numberOfSeats, numberOfDoors: viewModel.cars[index].numberOfDoors, gasType: viewModel.cars[index].GasType)
+                CarBasicsView(title: "Básico", numberOfSeats: viewModel.cars[index].numberOfSeats, numberOfDoors: viewModel.cars[index].numberOfDoors, gasType: viewModel.cars[index].GasType)
                 Divider()
-                CarInfoView(title: "Description", message: viewModel.cars[index].description)
+                CarInfoView(title: "Descrição", message: viewModel.cars[index].description)
                 Divider()
-                HostView(title: "Hosted by", message:  viewModel.cars[index].hostName, imageName: viewModel.cars[index].hostImageName, joinDate:viewModel.cars[index].hostJoinDate)
+                HostView(title: "Dono", message:  viewModel.cars[index].hostName, imageName: viewModel.cars[index].hostImageName, joinDate:viewModel.cars[index].hostJoinDate)
                 Spacer()
                     .frame(height: 120)
                 
@@ -65,10 +65,10 @@ struct DetailCarView: View {
                         .frame(width: UIScreen.main.bounds.width, height: 120)
                     HStack {
                         VStack {
-                            Text("\(viewModel.cars[index].pricePerDay)$ per day")
+                            Text("\(viewModel.cars[index].pricePerDay)R$ por dia")
                                 .font(.headline)
                                 .fontWeight(.semibold)
-                            Text("\(viewModel.cars[index].pricePerDay * 3)$ est. total")
+                            Text("\(viewModel.cars[index].pricePerDay * 3)R$ est. total")
                                 .font(.subheadline)
                                 .underline()
                         }
@@ -144,17 +144,26 @@ struct CancellationView: View {
                 Image(systemName: "hand.thumbsup")
                 VStack(alignment: .leading) {
                     Text(message)
-                    Text("Full refund before: ")
+                    Text("Reembolso total até: ")
                         .font(.footnote)
                         .foregroundStyle(.gray) +
-                    Text(Date(),style: .date)
+                    Text(formattedDate())
                         .font(.footnote)
                         .foregroundStyle(.gray)
+
+                   
+
                 }
             }
             
         }
         .padding(.horizontal)
+    }
+    func formattedDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "pt_BR") // Set locale to Portuguese
+        dateFormatter.dateStyle = .medium // You can adjust the style (short, medium, long, full)
+        return dateFormatter.string(from: Date())
     }
 }
 
@@ -169,12 +178,12 @@ struct InsuranceInfoView: View {
                 .font(.headline)
                 .fontWeight(.semibold)
             HStack {
-                Text("Insurance via "+message)
+                Text("Seguro "+message)
                 Spacer()
                 Button(action: {
                     showInsuranceSheet.toggle()
                 }, label: {
-                    Text("Read more")
+                    Text("+ informações")
                         .font(.headline)
                         .fontWeight(.bold)
                 })
@@ -204,13 +213,13 @@ struct CarBasicsView: View {
                         Image(systemName: "carseat.left.fill")
                             .resizable()
                             .frame(width: 24, height: 24)
-                        Text("\(numberOfSeats) seats")
+                        Text("\(numberOfSeats) assentos")
                     }
                     VStack {
                         Image(systemName: "car.window.right")
                             .resizable()
                             .frame(width: 24, height: 24)
-                        Text("\(numberOfDoors) doors")
+                        Text("\(numberOfDoors) portas")
                     }
                     VStack {
                         Image(systemName: "fuelpump")
@@ -246,7 +255,7 @@ struct HostView: View {
                 VStack(alignment: .leading) {
                     Text(message)
                         .fontWeight(.bold)
-                    Text("Joined \(joinDate)")
+                    Text("Entrou \(joinDate)")
                         .font(.subheadline)
                 }
             }

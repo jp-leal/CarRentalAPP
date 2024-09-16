@@ -15,7 +15,7 @@ struct NavigationStackModifier: ViewModifier {
                     Color(.systemGray6)
             }
             .ignoresSafeArea()
-            .navigationTitle("Find Cars")
+            .navigationTitle("Buscar Carros")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar{
                 ToolbarItem(placement: .topBarLeading) {
@@ -28,7 +28,7 @@ struct NavigationStackModifier: ViewModifier {
                         }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Image("elizabeth")
+                    Image("joao")
                         .resizable()
                         .frame(width:45,height: 45)
                         .scaledToFill()

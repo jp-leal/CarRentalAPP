@@ -15,7 +15,7 @@ struct TopCarsView: View {
     }
     var body: some View {
         VStack(alignment: .leading,spacing: 15) {
-            Text("Top Cars 🔥")
+            Text("Os Mais Pedidos 🔥")
                 .font(.headline)
                 .fontWeight(.semibold)
             ForEach (viewModel.cars) { car in

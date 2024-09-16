@@ -18,6 +18,36 @@
             endingLineNumber = "10"
             landmarkName = "MoreView"
             landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "AC5D89E2-E879-41D5-8916-10D216E24883 - 7ff860ac7e1c48fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CarRentalAPP.MoreView.init() -&gt; CarRentalAPP.MoreView"
+                  moduleName = "CarRentalAPP.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joaoleal/Documents/Xcode%20Practice%20Projects/CarRentalAPP/CarRentalAPP/Core/More/MoreView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12">
+               </Location>
+               <Location
+                  uuid = "AC5D89E2-E879-41D5-8916-10D216E24883 - 719957b873b1e796"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CarRentalAPP.MoreView.init(parametersOptions: Swift.Array&lt;(Swift.String, Swift.String)&gt;) -&gt; CarRentalAPP.MoreView"
+                  moduleName = "CarRentalAPP.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joaoleal/Documents/Xcode%20Practice%20Projects/CarRentalAPP/CarRentalAPP/Core/More/MoreView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

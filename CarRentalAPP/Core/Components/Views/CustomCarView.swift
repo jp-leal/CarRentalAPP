@@ -39,7 +39,7 @@ struct CustomCarView: View {
                                 .fontWeight(.semibold)
                                 .foregroundStyle(.black)
                         }
-                        Text("By \(viewModel.cars[index].hostName)")
+                        Text("Por \(viewModel.cars[index].hostName)")
                             .font(.footnote)
                             .foregroundStyle(.gray)
                     }
